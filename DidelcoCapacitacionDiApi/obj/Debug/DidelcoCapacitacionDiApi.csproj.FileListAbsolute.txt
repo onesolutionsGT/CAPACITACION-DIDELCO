@@ -1,0 +1,12 @@
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\obj\Debug\DidelcoCapacitacionDiApi.csproj.AssemblyReference.cache
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\obj\Debug\Interop.SAPbobsCOM.dll
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\obj\Debug\DidelcoCapacitacionDiApi.csproj.ResolveComReference.cache
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\obj\Debug\DidelcoCapacitacionDiApi.Form1.resources
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\obj\Debug\DidelcoCapacitacionDiApi.Properties.Resources.resources
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\obj\Debug\DidelcoCapacitacionDiApi.csproj.GenerateResource.cache
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\obj\Debug\DidelcoCapacitacionDiApi.csproj.CoreCompileInputs.cache
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\bin\Debug\DidelcoCapacitacionDiApi.exe.config
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\bin\Debug\DidelcoCapacitacionDiApi.exe
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\bin\Debug\DidelcoCapacitacionDiApi.pdb
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\obj\Debug\DidelcoCapacitacionDiApi.exe
+C:\Users\ricar\source\repos\DidelcoCapacitacionDiApi\DidelcoCapacitacionDiApi\obj\Debug\DidelcoCapacitacionDiApi.pdb
