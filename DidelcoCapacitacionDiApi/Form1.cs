@@ -269,9 +269,9 @@ namespace DidelcoCapacitacionDiApi
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(oCompany != null)
+            if (oCompany != null)
             {
-                if(oCompany.Connected == true)
+                if (oCompany.Connected == true)
                 {
                     ErrorLabel.Text = "YA CONECTADO";
                     return;
@@ -313,7 +313,7 @@ namespace DidelcoCapacitacionDiApi
             }
             if (oCompany.Connected == true)
             {
-                ErrorLabel.Text = "CONECTADO";        
+                ErrorLabel.Text = "CONECTADO";
             }
         }
 
@@ -330,7 +330,7 @@ namespace DidelcoCapacitacionDiApi
         {
             bool desconectado = Desconectar();
 
-            if(desconectado == false)
+            if (desconectado == false)
             {
                 ErrorLabel.Text = "No se pudo desconectar de la sociedad...";
             }
@@ -351,12 +351,12 @@ namespace DidelcoCapacitacionDiApi
                         oCompany.Disconnect();
                         Marshal.ReleaseComObject(oCompany);
                         GC.Collect();
-                        oCompany = null; 
+                        oCompany = null;
                     }
                 }
                 return true;
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
                 return false;
             }
@@ -381,9 +381,9 @@ namespace DidelcoCapacitacionDiApi
 
         private bool Conectado()
         {
-            if(oCompany != null)
+            if (oCompany != null)
             {
-                if(oCompany.Connected == true)
+                if (oCompany.Connected == true)
                 {
                     return true;
                 }
@@ -438,7 +438,7 @@ namespace DidelcoCapacitacionDiApi
             }
 
             int respuesta = oBusinessPartner.Add();
-            if(respuesta != 0)
+            if (respuesta != 0)
             {
                 string erroes = GetStringError(oCompany);
                 ErrorLabel.Text = erroes;
@@ -446,6 +446,197 @@ namespace DidelcoCapacitacionDiApi
             }
             oCompany.GetNewObjectCode(out string id_cardcode_creado);
             ErrorLabel.Text = "CREADO CON EL CODIGO: " + id_cardcode_creado;
+        }
+
+
+        //testing
+        private void testing()
+        {
+            UserObjectsMD oUserObjectMD = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oUserObjectsMD);
+
+            string numero = "10000";
+            string query = $@"SELECT ""DocEntry"" from OINV where ""DocNum"" = {numero} AND 1 = 1";
+            var s = GetSingleData(query);
+
+
+
+        }
+
+
+        private dynamic GetSingleData(string query)
+        {
+            //INSERT Solo a tablas definidas por el usuario que no sean parte de un UDO.
+            //SELECT Permitidos
+            //UPDATE Solo a campos de usuario
+            //DELETE Prohibido
+            try
+            {
+                Recordset Record = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
+                Record.DoQuery(query);
+                Record.MoveFirst();
+
+                if (Record.Fields.Count > 1)
+                {
+                    return "Esta consulta trae mas de una columna";
+                }
+
+                string valor = Record.Fields.Item(0).Value + "";
+
+                Marshal.ReleaseComObject(Record);
+                GC.Collect();
+                Record = null;
+
+                return valor;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string query = queryTxt.Text;
+            console.Text = console.Text + $"\n------Ejecutando query: {query}";
+
+            var dato = GetSingleData(query);
+
+            console.Text = console.Text + $"\n------El query se ejecuto con exito";
+            console.Text = console.Text + $"------Resultado col 1, reg 1: {dato}";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string query = queryTxt.Text;
+            console.Text = console.Text + $"\r\n----Ejecutando query: {query}";
+
+            Recordset rs = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
+            rs.DoQuery(query);
+
+            rs.MoveFirst();
+
+            while (!rs.EoF)
+            {
+                string linea = "|";
+                for (int i = 0; i < rs.Fields.Count; i++)
+                {
+                    linea = linea + "|" + rs.Fields.Item(i).Value + "|";
+                }
+                linea = linea + "|";
+                console.Text = console.Text + linea + "\r\n";
+                rs.MoveNext();
+            }
+
+            Marshal.ReleaseComObject(rs);
+            GC.Collect();
+            rs = null;
+            //UPDATE OINV SET "U_FIRMA_ELETRONICA" = 'Test de di api' WHERE "DocEntry" = '23081'
+            //Consulta con mas datos
+            //SELECT TOP 10 "DocEntry", "DocNum", "CardCode" FROM OINV ORDER BY "DocEntry" desc
+        }
+
+        //Metodo para crear una tabla definida por el usuario.
+        private void button8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                UserTablesMD oUserTableMD = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oUserTables);
+                string name = TableNameTxt.Text;
+                string descripcion = TableDescTxt.Text;
+
+                if (oUserTableMD.GetByKey(name) == true)
+                {
+                    console.Text = "Tabla ya existe. imposible crear de nuevo";
+
+                    Marshal.ReleaseComObject(oUserTableMD);
+                    GC.Collect();
+                    oUserTableMD = null;
+
+                    return;
+                }
+
+
+
+                //obviar
+                oUserTableMD.DisplayMenu = BoYesNoEnum.tYES;
+
+                oUserTableMD.TableDescription = descripcion;
+                oUserTableMD.TableName = name;
+                oUserTableMD.TableType = BoUTBTableType.bott_NoObject;
+
+                int resp = oUserTableMD.Add();
+
+                if (resp != 0)
+                {
+                    console.Text = GetStringError(oCompany);
+                    Marshal.ReleaseComObject(oUserTableMD);
+                    GC.Collect();
+                    oUserTableMD = null;
+                    return;
+                }
+
+                oCompany.GetNewObjectCode(out string codigoNuevo);
+
+                console.Text = $"Tabla {codigoNuevo} creada con exito";
+
+                Marshal.ReleaseComObject(oUserTableMD);
+                GC.Collect();
+                oUserTableMD = null;
+
+            }
+            catch (Exception ex)
+            {
+                console.Text = ex.Message;
+            }
+        }
+
+
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            UserFieldsMD oUserFieldsMD = oCompany.GetBusinessObject(BoObjectTypes.oUserFields);
+            string nombreTabla = "@" + TableNameTxt.Text;
+
+            //Tabla CUFD
+
+            //Select "FieldID" from OINV where "AliasID" = 'CAMPOTEST' and TableID = '@TBL01'
+
+            // 102 no es el field ID, es un vaor quemado para ejemplo.
+            //if (oUserFieldsMD.GetByKey(nombreTabla, 102) == true)
+            //{
+            //    return;
+            //}
+
+            oUserFieldsMD.TableName = nombreTabla;
+            oUserFieldsMD.Name = "CAMPOTEST2";
+            oUserFieldsMD.Description = "campo de prueba";
+            oUserFieldsMD.Size = 254;
+            oUserFieldsMD.Type = BoFieldTypes.db_Alpha;
+            oUserFieldsMD.SubType = BoFldSubTypes.st_None;
+            oUserFieldsMD.Mandatory = BoYesNoEnum.tNO;
+
+            int resp = oUserFieldsMD.Add();
+
+            if (resp != 0)
+            {
+                console.Text = GetStringError(oCompany);
+                Marshal.ReleaseComObject(oUserFieldsMD);
+                GC.Collect();
+                oUserFieldsMD = null;
+                return;
+            }
+            oCompany.GetNewObjectCode(out string Codigo);
+            console.Text = $"Campo creado con exito: {Codigo}";
+            Marshal.ReleaseComObject(oUserFieldsMD);
+            GC.Collect();
+            oUserFieldsMD = null;
         }
     }
 }

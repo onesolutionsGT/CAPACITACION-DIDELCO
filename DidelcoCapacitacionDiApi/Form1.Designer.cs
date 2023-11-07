@@ -56,26 +56,42 @@
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.queryTxt = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.console = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.TableNameTxt = new System.Windows.Forms.TextBox();
+            this.TableDescTxt = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(566, 39);
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Location = new System.Drawing.Point(493, 201);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(156, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "CreaDocumento";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(566, 68);
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Location = new System.Drawing.Point(493, 230);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(156, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "ActualizaDocumento";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ServerTxt
@@ -209,7 +225,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(550, 258);
+            this.button3.Location = new System.Drawing.Point(493, 39);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(205, 63);
             this.button3.TabIndex = 15;
@@ -219,7 +235,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(550, 330);
+            this.button4.Location = new System.Drawing.Point(493, 111);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(205, 63);
             this.button4.TabIndex = 16;
@@ -301,7 +317,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(883, 311);
+            this.textBox1.Location = new System.Drawing.Point(883, 278);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(302, 22);
             this.textBox1.TabIndex = 26;
@@ -309,17 +325,145 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(780, 311);
+            this.label11.Location = new System.Drawing.Point(780, 278);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(85, 17);
             this.label11.TabIndex = 25;
             this.label11.Text = "CARDCODE";
             // 
+            // queryTxt
+            // 
+            this.queryTxt.Location = new System.Drawing.Point(1323, 42);
+            this.queryTxt.Name = "queryTxt";
+            this.queryTxt.Size = new System.Drawing.Size(321, 22);
+            this.queryTxt.TabIndex = 27;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(1250, 45);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 17);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "QUERY";
+            // 
+            // console
+            // 
+            this.console.BackColor = System.Drawing.SystemColors.InfoText;
+            this.console.ForeColor = System.Drawing.Color.White;
+            this.console.Location = new System.Drawing.Point(1323, 80);
+            this.console.Multiline = true;
+            this.console.Name = "console";
+            this.console.Size = new System.Drawing.Size(321, 173);
+            this.console.TabIndex = 29;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(1323, 262);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(321, 59);
+            this.button6.TabIndex = 30;
+            this.button6.Text = "DoQuery";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Location = new System.Drawing.Point(771, 259);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(432, 453);
+            this.panel1.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 94);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(422, 17);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "CREAR LA INSERCION DE UN DOCUMENTO ORDEN DE VENTA";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1323, 332);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(321, 59);
+            this.button7.TabIndex = 32;
+            this.button7.Text = "DoQuery Table";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(1221, 425);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(98, 17);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Tabla Nombre";
+            // 
+            // TableNameTxt
+            // 
+            this.TableNameTxt.Location = new System.Drawing.Point(1323, 425);
+            this.TableNameTxt.Name = "TableNameTxt";
+            this.TableNameTxt.Size = new System.Drawing.Size(321, 22);
+            this.TableNameTxt.TabIndex = 34;
+            this.TableNameTxt.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // TableDescTxt
+            // 
+            this.TableDescTxt.Location = new System.Drawing.Point(1323, 453);
+            this.TableDescTxt.Name = "TableDescTxt";
+            this.TableDescTxt.Size = new System.Drawing.Size(321, 22);
+            this.TableDescTxt.TabIndex = 35;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(1221, 458);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(82, 17);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Descripcion";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(1323, 496);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(321, 73);
+            this.button8.TabIndex = 38;
+            this.button8.Text = "Crear Tabla";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(1323, 575);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(321, 71);
+            this.button9.TabIndex = 39;
+            this.button9.Text = "Campo De usuario";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 736);
+            this.ClientSize = new System.Drawing.Size(1751, 736);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.TableDescTxt);
+            this.Controls.Add(this.TableNameTxt);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.console);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.queryTxt);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button5);
@@ -348,9 +492,12 @@
             this.Controls.Add(this.ServerTxt);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_exit);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,6 +533,19 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox queryTxt;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox console;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox TableNameTxt;
+        private System.Windows.Forms.TextBox TableDescTxt;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }
 
