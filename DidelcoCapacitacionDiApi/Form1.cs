@@ -638,6 +638,177 @@ namespace DidelcoCapacitacionDiApi
             GC.Collect();
             oUserFieldsMD = null;
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string tableName = TableNameTblTxt.Text;
+                string code = CodeTblTxt.Text;
+                string name = NameTblTxt.Text;
+                string UF1 = UFTblTxt.Text;
+                string UF2 = UF2TblTxt.Text;
+
+                UserTable oUserTable = oCompany.UserTables.Item(tableName);
+
+                oUserTable.Code = code;
+                oUserTable.Name = name;
+                oUserTable.UserFields.Fields.Item("U_CAMPOTEST").Value = UF1;
+                oUserTable.UserFields.Fields.Item("U_CAMPOTEST2").Value = UF2;
+
+                int respuesta = oUserTable.Add();
+
+                if(respuesta != 0)
+                {
+                    consoleTBL.Text = consoleTBL.Text + GetStringError(oCompany) + "\r\n";
+                    Marshal.ReleaseComObject(oUserTable);
+                    GC.Collect();
+                    oUserTable = null;
+                    return;
+                }
+
+                consoleTBL.Text = consoleTBL.Text + "Registro ingresado con exito." + "\r\n";
+                Marshal.ReleaseComObject(oUserTable);
+                GC.Collect();
+                oUserTable = null;
+            }
+            catch (Exception ex)
+            {
+                consoleTBL.Text = consoleTBL.Text + ex.Message + "\r\n";
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string UdoCode = "UDO_PACHON";
+                string UdoName = "Udo para pachon";
+                string UdoMenuUID = "UDO_PACHON";
+                string UdoMenuCaption = "udo de pachones";
+                
+                string TableEnca = UdoEncaTxt.Text;
+                string TableDeta = UdoDetaTxt.Text;
+
+                //UDO_PACHON MasterData
+                //UDO_PACHON_DET MasterDataLines
+
+                UserObjectsMD oUDO = oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oUserObjectsMD);
+
+                if (oUDO.GetByKey(UdoCode) == true)
+                {
+                    consoleUdo.Text = consoleUdo.Text + $"El udo {UdoCode} ya existe \r\n "; 
+                    Marshal.ReleaseComObject(oUDO);
+                    GC.Collect();
+                    oUDO = null;
+                    return;
+                }
+
+
+                //Datos Generales
+                oUDO.Code = UdoCode;
+                oUDO.Name = UdoName;
+                oUDO.ObjectType = BoUDOObjType.boud_MasterData;
+                oUDO.ManageSeries = BoYesNoEnum.tYES;
+                //Tabla maestra
+                oUDO.TableName = TableEnca;
+                //campos por defecto
+                //--Code
+                //--Name
+
+                //Menu visual
+                oUDO.MenuItem = SAPbobsCOM.BoYesNoEnum.tYES;
+                oUDO.MenuUID = UdoMenuUID;
+                oUDO.MenuCaption = UdoMenuCaption;
+                oUDO.FatherMenuID = 43679;
+                oUDO.Position = 1;
+                //CheckBox propiedades CAN
+                oUDO.CanApprove = BoYesNoEnum.tYES;
+                oUDO.CanArchive = BoYesNoEnum.tNO;
+                oUDO.CanCancel = BoYesNoEnum.tYES;
+                oUDO.CanClose = BoYesNoEnum.tYES;
+                oUDO.CanCreateDefaultForm = BoYesNoEnum.tYES;
+                oUDO.CanDelete = BoYesNoEnum.tYES;
+                oUDO.CanFind = BoYesNoEnum.tYES;
+                oUDO.CanLog = BoYesNoEnum.tYES;
+                oUDO.CanYearTransfer = BoYesNoEnum.tNO;
+
+                //FormColumns
+                oUDO.FormColumns.FormColumnAlias = "Code";
+                oUDO.FormColumns.FormColumnDescription = "codigo";
+                oUDO.FormColumns.Editable = BoYesNoEnum.tNO;
+                oUDO.FormColumns.Add();
+                oUDO.FormColumns.FormColumnAlias = "DocEntry";
+                oUDO.FormColumns.FormColumnDescription = "ID documento";
+                oUDO.FormColumns.Editable = BoYesNoEnum.tNO;
+                oUDO.FormColumns.Add();
+                oUDO.FormColumns.FormColumnAlias = "CreateDate";
+                oUDO.FormColumns.FormColumnDescription = "Fecha de creacion";
+                oUDO.FormColumns.Editable = BoYesNoEnum.tNO;
+                oUDO.FormColumns.Add();
+                //DataSource nos indica de donde esta ingresando el registro
+                // I interface
+                // U Usario
+                // O Sap
+                oUDO.FormColumns.FormColumnAlias = "DataSource";
+                oUDO.FormColumns.FormColumnDescription = "Fuente de datos";
+                oUDO.FormColumns.Editable = BoYesNoEnum.tNO;
+                oUDO.FormColumns.Add();
+                oUDO.FormColumns.FormColumnAlias = "U_VALOR";
+                oUDO.FormColumns.FormColumnDescription = "campo de usuario";
+                oUDO.FormColumns.Editable = BoYesNoEnum.tYES;
+                oUDO.FormColumns.SonNumber = 0;
+                oUDO.FormColumns.Add();
+
+                //FindColumns
+                oUDO.FindColumns.ColumnAlias = "Name";
+                oUDO.FindColumns.ColumnDescription = "Nombre";
+                oUDO.FindColumns.Add();
+                oUDO.FindColumns.ColumnAlias = "DocEntry";
+                oUDO.FindColumns.ColumnDescription = "ID documento";
+                oUDO.FindColumns.Add();
+                oUDO.FindColumns.ColumnAlias = "U_VALOR";
+                oUDO.FindColumns.ColumnDescription = "campo de usuario";
+                oUDO.FindColumns.Add();
+
+                //ChildTables
+                oUDO.ChildTables.TableName = TableDeta;
+                oUDO.ChildTables.Add();
+
+                //EnhancedFormColumns
+                oUDO.EnhancedFormColumns.ColumnAlias = "Code";
+                oUDO.EnhancedFormColumns.ColumnDescription = "Codigo";
+                oUDO.EnhancedFormColumns.ColumnIsUsed = BoYesNoEnum.tYES;
+                oUDO.EnhancedFormColumns.Editable = BoYesNoEnum.tYES;
+                oUDO.EnhancedFormColumns.ChildNumber = 0;
+                oUDO.EnhancedFormColumns.Add();
+                oUDO.EnhancedFormColumns.ColumnAlias = "U_VALOR";
+                oUDO.EnhancedFormColumns.ColumnDescription = "valor";
+                oUDO.EnhancedFormColumns.ColumnIsUsed = BoYesNoEnum.tYES;
+                oUDO.EnhancedFormColumns.Editable = BoYesNoEnum.tYES;
+                oUDO.EnhancedFormColumns.ChildNumber = 1;
+                oUDO.EnhancedFormColumns.Add();
+
+                int respuesta = oUDO.Add();
+                if(respuesta != 0)
+                {
+                    Marshal.ReleaseComObject(oUDO);
+                    GC.Collect();
+                    oUDO = null;
+                    consoleUdo.Text = consoleUdo.Text + GetStringError(oCompany) + "\r\n";
+                    return;
+                }
+                Marshal.ReleaseComObject(oUDO);
+                GC.Collect();
+                oUDO = null;
+                consoleUdo.Text = consoleUdo.Text + "Creado con exito el UDO" + "\r\n";
+
+            }
+            catch (Exception ex)
+            {
+                consoleUdo.Text = consoleUdo.Text + ex.Message + "\r\n";
+            }
+        }
     }
 }
 

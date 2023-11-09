@@ -69,7 +69,36 @@
             this.label15 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.CodeTblTxt = new System.Windows.Forms.TextBox();
+            this.UFTblTxt = new System.Windows.Forms.TextBox();
+            this.UF2TblTxt = new System.Windows.Forms.TextBox();
+            this.NameTblTxt = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.consoleTBL = new System.Windows.Forms.TextBox();
+            this.TableNameTblTxt = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.UdoEncaTxt = new System.Windows.Forms.TextBox();
+            this.UdoDetaTxt = new System.Windows.Forms.TextBox();
+            this.consoleUdo = new System.Windows.Forms.TextBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -317,15 +346,15 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(883, 278);
+            this.textBox1.Location = new System.Drawing.Point(605, 281);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(302, 22);
+            this.textBox1.Size = new System.Drawing.Size(178, 22);
             this.textBox1.TabIndex = 26;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(780, 278);
+            this.label11.Location = new System.Drawing.Point(502, 281);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(85, 17);
             this.label11.TabIndex = 25;
@@ -371,9 +400,9 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Location = new System.Drawing.Point(771, 259);
+            this.panel1.Location = new System.Drawing.Point(493, 262);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(432, 453);
+            this.panel1.Size = new System.Drawing.Size(308, 453);
             this.panel1.TabIndex = 31;
             // 
             // label13
@@ -448,11 +477,246 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Location = new System.Drawing.Point(1209, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(461, 389);
+            this.panel2.TabIndex = 32;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.DarkOrange;
+            this.label16.Location = new System.Drawing.Point(7, 94);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(0, 17);
+            this.label16.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.GreenYellow;
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Location = new System.Drawing.Point(1209, 407);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(461, 317);
+            this.panel3.TabIndex = 33;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.DarkOrange;
+            this.label17.Location = new System.Drawing.Point(7, 94);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 17);
+            this.label17.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.LimeGreen;
+            this.panel4.Controls.Add(this.label21);
+            this.panel4.Controls.Add(this.TableNameTblTxt);
+            this.panel4.Controls.Add(this.consoleTBL);
+            this.panel4.Controls.Add(this.button10);
+            this.panel4.Controls.Add(this.label23);
+            this.panel4.Controls.Add(this.label22);
+            this.panel4.Controls.Add(this.label20);
+            this.panel4.Controls.Add(this.label19);
+            this.panel4.Controls.Add(this.NameTblTxt);
+            this.panel4.Controls.Add(this.UF2TblTxt);
+            this.panel4.Controls.Add(this.UFTblTxt);
+            this.panel4.Controls.Add(this.CodeTblTxt);
+            this.panel4.Controls.Add(this.label18);
+            this.panel4.Location = new System.Drawing.Point(807, 262);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(396, 453);
+            this.panel4.TabIndex = 34;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.DarkOrange;
+            this.label18.Location = new System.Drawing.Point(7, 105);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(0, 17);
+            this.label18.TabIndex = 0;
+            // 
+            // CodeTblTxt
+            // 
+            this.CodeTblTxt.Location = new System.Drawing.Point(136, 63);
+            this.CodeTblTxt.Name = "CodeTblTxt";
+            this.CodeTblTxt.Size = new System.Drawing.Size(242, 22);
+            this.CodeTblTxt.TabIndex = 1;
+            // 
+            // UFTblTxt
+            // 
+            this.UFTblTxt.Location = new System.Drawing.Point(136, 128);
+            this.UFTblTxt.Name = "UFTblTxt";
+            this.UFTblTxt.Size = new System.Drawing.Size(242, 22);
+            this.UFTblTxt.TabIndex = 2;
+            // 
+            // UF2TblTxt
+            // 
+            this.UF2TblTxt.Location = new System.Drawing.Point(136, 158);
+            this.UF2TblTxt.Name = "UF2TblTxt";
+            this.UF2TblTxt.Size = new System.Drawing.Size(242, 22);
+            this.UF2TblTxt.TabIndex = 3;
+            // 
+            // NameTblTxt
+            // 
+            this.NameTblTxt.Location = new System.Drawing.Point(136, 91);
+            this.NameTblTxt.Name = "NameTblTxt";
+            this.NameTblTxt.Size = new System.Drawing.Size(242, 22);
+            this.NameTblTxt.TabIndex = 4;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(79, 63);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(47, 17);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "CODE";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(79, 94);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(47, 17);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "NAME";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(15, 131);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(111, 17);
+            this.label22.TabIndex = 7;
+            this.label22.Text = "U_CAMPOTEST";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 166);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(119, 17);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "U_CAMPOTEST2";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(10, 368);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(368, 63);
+            this.button10.TabIndex = 9;
+            this.button10.Text = "AGREGAR REGISTRO";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // consoleTBL
+            // 
+            this.consoleTBL.BackColor = System.Drawing.Color.Black;
+            this.consoleTBL.ForeColor = System.Drawing.Color.White;
+            this.consoleTBL.Location = new System.Drawing.Point(10, 193);
+            this.consoleTBL.Multiline = true;
+            this.consoleTBL.Name = "consoleTBL";
+            this.consoleTBL.Size = new System.Drawing.Size(368, 169);
+            this.consoleTBL.TabIndex = 10;
+            // 
+            // TableNameTblTxt
+            // 
+            this.TableNameTblTxt.Location = new System.Drawing.Point(136, 35);
+            this.TableNameTblTxt.Name = "TableNameTblTxt";
+            this.TableNameTblTxt.Size = new System.Drawing.Size(242, 22);
+            this.TableNameTblTxt.TabIndex = 11;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(79, 35);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 17);
+            this.label21.TabIndex = 12;
+            this.label21.Text = "TABLA";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Violet;
+            this.panel5.Controls.Add(this.label25);
+            this.panel5.Controls.Add(this.label24);
+            this.panel5.Controls.Add(this.button11);
+            this.panel5.Controls.Add(this.consoleUdo);
+            this.panel5.Controls.Add(this.UdoDetaTxt);
+            this.panel5.Controls.Add(this.UdoEncaTxt);
+            this.panel5.Location = new System.Drawing.Point(50, 458);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(426, 257);
+            this.panel5.TabIndex = 40;
+            // 
+            // UdoEncaTxt
+            // 
+            this.UdoEncaTxt.Location = new System.Drawing.Point(112, 38);
+            this.UdoEncaTxt.Name = "UdoEncaTxt";
+            this.UdoEncaTxt.Size = new System.Drawing.Size(288, 22);
+            this.UdoEncaTxt.TabIndex = 0;
+            // 
+            // UdoDetaTxt
+            // 
+            this.UdoDetaTxt.Location = new System.Drawing.Point(112, 77);
+            this.UdoDetaTxt.Name = "UdoDetaTxt";
+            this.UdoDetaTxt.Size = new System.Drawing.Size(288, 22);
+            this.UdoDetaTxt.TabIndex = 1;
+            // 
+            // consoleUdo
+            // 
+            this.consoleUdo.BackColor = System.Drawing.Color.Black;
+            this.consoleUdo.ForeColor = System.Drawing.Color.White;
+            this.consoleUdo.Location = new System.Drawing.Point(112, 117);
+            this.consoleUdo.Multiline = true;
+            this.consoleUdo.Name = "consoleUdo";
+            this.consoleUdo.Size = new System.Drawing.Size(288, 118);
+            this.consoleUdo.TabIndex = 2;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(19, 117);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(77, 118);
+            this.button11.TabIndex = 3;
+            this.button11.Text = "UDO ADD";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(16, 38);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(80, 17);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "UDO ENCA";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(16, 80);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(80, 17);
+            this.label25.TabIndex = 5;
+            this.label25.Text = "UDO DETA";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1751, 736);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label15);
@@ -493,11 +757,22 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_exit);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,6 +821,31 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox TableNameTblTxt;
+        private System.Windows.Forms.TextBox consoleTBL;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox NameTblTxt;
+        private System.Windows.Forms.TextBox UF2TblTxt;
+        private System.Windows.Forms.TextBox UFTblTxt;
+        private System.Windows.Forms.TextBox CodeTblTxt;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.TextBox consoleUdo;
+        private System.Windows.Forms.TextBox UdoDetaTxt;
+        private System.Windows.Forms.TextBox UdoEncaTxt;
     }
 }
 
